@@ -1,0 +1,24 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# VSCode or PyCharm settings
+.vscode/
+.idea/
+
+# CSV or JSON data files
+*.csv
+*.json
+
+# PDF output (optional)
+*.pdf
+
+# OS-specific files
+.DS_Store
+Thumbs.db
