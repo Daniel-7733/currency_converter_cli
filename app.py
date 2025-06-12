@@ -6,14 +6,25 @@ from typing import Tuple, List
 
 
 def page_reset() -> None:
-    """Clear previous content"""
+    """
+    Clear previous content.
+
+    Returns:
+        None
+    """
 
     for widget in content_frame.winfo_children():
         widget.destroy()  # Clear previous content
 
 
 def load_page_one() -> None:
-    
+    """
+    Load the first page displaying the conversion history.
+
+    Returns:
+        None
+    """
+
     page_reset()
 
     history_list: List[str] = show_history()
@@ -32,6 +43,12 @@ def load_page_one() -> None:
 
 
 def load_page_two() -> None:
+    """
+    Load the second page for converting currencies.
+
+    Returns:
+        None
+    """
 
     page_reset()
 
@@ -59,6 +76,12 @@ def load_page_two() -> None:
     result_label.pack(padx=10, pady=15)
 
     def on_done_button_click() -> None:
+        """
+        Handle the "Convert" button click event.
+
+        Returns:
+            None
+        """
 
         amount: str = amount_entry.get()
         symbol: str = symbol_entry.get().upper()
@@ -70,6 +93,12 @@ def load_page_two() -> None:
             result_label.config(text=f"❌ Error: {str(e)}")
 
     def on_save_button_click() -> None:
+        """
+        Handle the "Save" button click event.
+
+        Returns:
+            None
+        """
 
         amount: str = amount_entry.get()
         symbol: str = symbol_entry.get().upper()
@@ -83,6 +112,18 @@ def load_page_two() -> None:
 
 
 def create_menu_button(parent, text, command) -> Button:
+    """
+    Create a menu button in the sidebar.
+
+    Args:
+        parent (Frame): The parent frame where the button will be added.
+        text (str): The text to display on the button.
+        command (function): The function to call when the button is clicked.
+
+    Returns:
+        Button: The created menu button.
+    """
+
     button_frame: Frame = Frame(parent, bg='#c3c3c3')
     button_frame.pack(fill='x', pady=5)
 
